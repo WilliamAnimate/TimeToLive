@@ -10,8 +10,10 @@ import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.TntEntity;
 import net.minecraft.entity.mob.CreeperEntity;
-import net.minecraft.util.math.Matrix4f;
-import net.minecraft.util.math.Quaternion;
+// import net.minecraft.util.math.Matrix4f;
+import org.joml.Matrix4f;
+// import net.minecraft.util.math.Quaternion;
+// import net.minecraft.util.math.vector.Quaternion;
 import net.minecraft.util.math.Vec3d;
 import schauweg.timetolive.config.TTLConfigManger;
 import schauweg.timetolive.mixin.CreeperEntityMixin;
@@ -20,7 +22,7 @@ import java.util.stream.StreamSupport;
 
 public class CountdownRenderer {
 
-    public static void render(MatrixStack matrices, float partialTicks, Camera camera, Matrix4f projection, Frustum capturedFrustum) {
+    public static void render(MatrixStack matrices, float partialTicks, Camera camera, org.joml.Matrix4f projection, Frustum capturedFrustum) {
         MinecraftClient mc = MinecraftClient.getInstance();
         if(mc.world == null || !MinecraftClient.isHudEnabled()) {
             return;
